@@ -6,7 +6,7 @@
 
 @layer base {
   * {
-    @apply p-0 m-0 box-border scroll-smooth;
+    @apply p-0 m-0 box-border scroll-smooth list-none;
   }
   body {
     @apply bg-white-1 font-inter;
