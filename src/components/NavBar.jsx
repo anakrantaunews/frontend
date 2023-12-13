@@ -50,7 +50,7 @@ export default function NavBar() {
         >
           <div className="absolute top-0 right-0 w-full bg-white-1 px-8 pt-28 pb-14">
             <XMarkIcon
-              className="absolute top-11 right-8 h-8 w-8 text-black-1"
+              className="absolute top-7 right-8 h-8 w-8 text-black-1"
               onClick={handleOpen}
             />
             <div className="flex flex-col gap-5">
