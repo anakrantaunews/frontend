@@ -11,7 +11,7 @@ export default function NavBar() {
   };
 
   return (
-    <header className="p-8">
+    <header className="px-8 py-6 md:py-8">
       <nav className="flex items-center justify-between">
         <Link to={"/"}>
           <img src={logo} alt="logo" className="w-40 md:w-52" />
@@ -19,7 +19,7 @@ export default function NavBar() {
         <div className="hidden md:block">
           <div className="flex items-center gap-12">
             <Link to={"/search"} className="text-gray-1">
-              Artikel Semua
+              Semua Berita
             </Link>
             <Link to={"/login"}>
               <Button isPrimary>Login</Button>
@@ -41,7 +41,7 @@ export default function NavBar() {
             />
             <div className="flex flex-col gap-5">
               <Link to={"/search"} className="text-gray-1">
-                Artikel Semua
+                Semua Berita
               </Link>
               <hr className="border w-full" />
               <Link to={"/login"}>

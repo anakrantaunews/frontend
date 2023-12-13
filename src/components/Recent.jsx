@@ -3,9 +3,11 @@ import { DATA_RECENTS, DATA_RECENT_NEWS } from "../Data";
 
 export default function Recent() {
   return (
-    <section className="px-8 py-[3.75rem]">
+    <section className="px-8 md:py-[3.75rem] py-8">
       <div>
-        <h1 className="font-bold text-4xl text-black-1 mb-8">Terbaru</h1>
+        <h1 className="font-bold text-2xl md:text-3xl lg:text-4xl text-black-1 mb-8">
+          Terbaru
+        </h1>
         {DATA_RECENTS.map((item, index) => (
           <div
             key={index}
