@@ -2,14 +2,16 @@ import React from "react";
 
 export default function CardBlog({ imgURL, date, title }) {
   return (
-    <div className="flex flex-col gap-8 mb-5 md:mb-8">
-      <img
-        src={imgURL}
-        alt=""
-        className="md:h-[18.50rem] md:w-[25rem] rounded-xl object-cover"
-      />
+    <div className="group flex flex-col gap-8 mb-5 md:mb-8 cursor-pointer">
+      <div className="rounded-xl overflow-hidden">
+        <img
+          src={imgURL}
+          alt=""
+          className="md:h-[18.50rem] md:w-[25rem] rounded-xl object-cover group-hover:scale-[110%] transition-all duration-300"
+        />
+      </div>
       <div className="flex flex-col gap-6">
-        <h2 className="font-delaGothic text-lg md:text-xl lg:text-2xl">
+        <h2 className="text-xl font-medium line-clamp-2 group-hover:underline">
           {title}
         </h2>
         <div>
