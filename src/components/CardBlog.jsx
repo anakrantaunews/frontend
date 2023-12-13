@@ -6,6 +6,7 @@ export default function CardBlog({ thumbnailUrl, createdAt, name, _id }) {
   const navigate = useNavigate();
   const onClickHandle = () => {
     navigate(`/detail/${_id}`);
+    window.location.reload();
   };
   return (
     <div

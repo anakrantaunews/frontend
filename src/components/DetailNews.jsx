@@ -3,6 +3,7 @@ import DetailNewsPhoto from "../assets/detailnews.png";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { config } from "../config";
+import moment from "moment";
 
 export default function DetailNews() {
   const [data, setData] = useState();
@@ -29,7 +30,7 @@ export default function DetailNews() {
               <p className="text-xs text-black-1">Dibaca {data.view} kali </p>
 
               <div className="inline-block px-8 py-2 font-extrabold rounded-lg text-center text-xs bg-menu text-black-2">
-                {data.createdAt}
+                {moment(data.createdAt).format("ll")}
               </div>
             </div>
 
