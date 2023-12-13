@@ -3,11 +3,17 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.svg";
 import { Bars2Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import Button from "./Button";
+import Cookies from "js-cookie";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const handleOpen = () => {
     setIsOpen(!isOpen);
+  };
+
+  const handleLogout = () => {
+    Cookies.remove("token");
+    window.location.reload();
   };
 
   return (
@@ -21,9 +27,17 @@ export default function NavBar() {
             <Link to={"/search"} className="text-gray-1">
               Semua Berita
             </Link>
-            <Link to={"/login"}>
-              <Button isPrimary>Login</Button>
-            </Link>
+            {Cookies.get("token") ? (
+              <Link>
+                <Button onClick={handleLogout} isPrimary>
+                  Logout
+                </Button>
+              </Link>
+            ) : (
+              <Link to={"/login"}>
+                <Button isPrimary>Login</Button>
+              </Link>
+            )}
           </div>
         </div>
         <div className="md:hidden">
@@ -44,9 +58,17 @@ export default function NavBar() {
                 Semua Berita
               </Link>
               <hr className="border w-full" />
-              <Link to={"/login"}>
-                <Button isPrimary>Login</Button>
-              </Link>
+              {Cookies.get("token") ? (
+                <Link>
+                  <Button onClick={handleLogout} isPrimary>
+                    Logout
+                  </Button>
+                </Link>
+              ) : (
+                <Link to={"/login"}>
+                  <Button isPrimary>Login</Button>
+                </Link>
+              )}
             </div>
           </div>
         </div>
