@@ -27,7 +27,10 @@ export default function DetailNews() {
 
           <div className="flex flex-col gap-8 mt-4">
             <div className="flex items-center justify-between">
-              <p className="text-xs text-black-1">Dibaca {data.view} kali </p>
+              <div className="flex flex-col gap-5">
+                <p className="text-xs text-black-1">Dibaca {data.view} kali </p>
+                <p className="text-xs italic md:text-base text-black-1">{data.author_id ? `Author : ${data.author_id?.username} - ${data.author_id?.email}` : "Admin - Anak Rantau News"}</p>
+              </div>
 
               <div className="inline-block px-8 py-2 font-extrabold rounded-lg text-center text-xs bg-menu text-black-2">
                 {moment(data.createdAt).format("ll")}

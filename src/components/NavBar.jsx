@@ -28,11 +28,16 @@ export default function NavBar() {
               Semua Berita
             </Link>
             {Cookies.get("token") ? (
-              <Link>
-                <Button onClick={handleLogout} isPrimary>
-                  Logout
-                </Button>
-              </Link>
+              <div className="flex gap-4">
+                <Link to={"/profile"}>
+                  <Button isPrimary>Profile</Button>
+                </Link>
+                <Link>
+                  <Button onClick={handleLogout} isPrimary>
+                    Logout
+                  </Button>
+                </Link>
+              </div>
             ) : (
               <Link to={"/login"}>
                 <Button isPrimary>Login</Button>
@@ -59,11 +64,16 @@ export default function NavBar() {
               </Link>
               <hr className="border w-full" />
               {Cookies.get("token") ? (
-                <Link>
-                  <Button onClick={handleLogout} isPrimary>
-                    Logout
-                  </Button>
-                </Link>
+                <div className="flex flex-col gap-10">
+                  <Link to={"/profile"}>
+                    <Button>Profile</Button>
+                  </Link>
+                  <Link>
+                    <Button onClick={handleLogout} isPrimary>
+                      Logout
+                    </Button>
+                  </Link>
+                </div>
               ) : (
                 <Link to={"/login"}>
                   <Button isPrimary>Login</Button>
